@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width: 100px;height: 100px;border-radius: 50%;background:#FC3;box-shadow:0 0 100px #ff0;position: absolute;left: 0;top: 0;}
+		p{height: 200px;line-height: 200px;font-size: 60px;text-align: center;margin-top:200px;text-shadow: 0px 0px 0px #000;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv=document.querySelector('div');
+			var oP=document.querySelector('p');
+			document.onmousemove=function(ev){
+				oDiv.style.left=ev.pageX-oDiv.offsetWidth/2+'px';
+				oDiv.style.top=ev.pageY-oDiv.offsetHeight/2+'px';
+				var x=oP.offsetLeft+oP.offsetWidth/2-ev.pageX;
+				var y=oP.offsetTop+oP.offsetHeight/2-ev.pageY;
+				var r=Math.sqrt(x*x+y*y);
+				oP.style.textShadow=x+'px '+y+'px '+r/30+ 'px #000';
+			};
+		};
+	</script>
+</head>
+<body>
+	<div></div>
+	<p>我最帅</p>
+</body>
+</html>
