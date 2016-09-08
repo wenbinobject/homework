@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0}
+		body{background: url(bg.jpg) no-repeat;width: 1920px;height:1200px;}
+		.box{ width: 200px;height: 200px;position: relative;float: left;-webkit-transition:1s all ease;float: left;margin: 100px;}
+		.people{width:200px;height: 200px;background: url(1.jpg) no-repeat;float: left;position: absolute;left: 0;top: 0;background-size: 100%;z-index: 3;-webkit-transition:1s all ease;}
+		.disk{width: 200px;height: 200px;background: url(cd.png) no-repeat;position: absolute;left: 0 top:0;z-index: 2;-webkit-transition:1s all ease;}
+/*		.people:hover{-webkit-transform:translate(0,20px);}
+		.disk:hover{-webkit-transform:translate(0,-40px);}*/
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var aBox=document.querySelectorAll('.box');
+			var aDisk=document.querySelectorAll('.disk');
+			for (var i = 0; i < aBox.length; i++) {
+				aBox[i].index=i;
+				aBox[i].onmouseenter=function(){
+					this.style.WebkitTransform='translate(0,20px)';
+					aDisk[this.index].style.WebkitTransform='translate(0,-40px)';
+				};
+				aBox[i].onmouseleave=function(){
+					this.style.WebkitTransform='translate(0,0px)';
+					aDisk[this.index].style.WebkitTransform='translate(0,0px)';
+				};	
+			}
+		};
+	</script>
+</head>
+<body>
+<div class="box">
+	<div class="people"></div>
+	<div class="disk"></div>
+</div>
+<div class="box">
+	<div class="people"></div>
+	<div class="disk"></div>
+</div>
+<div class="box">
+	<div class="people"></div>
+	<div class="disk"></div>
+</div>
+	
+</body>
+</html>

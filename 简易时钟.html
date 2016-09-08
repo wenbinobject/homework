@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{margin: 0;padding: 0}
+	.clock{width: 300px;height: 300px;position:relative;border-radius: 50%;border: 5px solid #000;margin: 100px auto}
+	.hours{width: 6px;height:40px;background: #000;position: absolute;left: 150px;top:110px;margin:-3px;border-radius: 50% 50% 0 0;transform-origin:bottom;}
+	.minutes{width: 4px;height:50px;background: #000;position: absolute;left: 150px;top:100px;margin:-2px;border-radius: 50% 50% 0 0;transform-origin:bottom;}
+	.seconds{width: 2px;height:80px;background: red;position: absolute;left: 150px;top:70px;margin:-2px;border-radius: 20% 20% 0 0;transform-origin:bottom;}
+	.cap{width: 16px;height:16px;position: absolute;left: 150px;top: 150px;margin-left: -8px;margin-top: -8px;border-radius: 50%;background: -webkit-radial-gradient(#fff, #000);}
+	.clock span{width: 4px;height: 12px;background: #000;position: absolute;left: 150px;margin-left: -2px;transform-origin:2px 150px;background: #000;text-align: center;}
+	.clock span em{font-style: normal;position: absolute;top:25px;text-align: center;width: 20px;height: 20px;line-height: 20px;margin-left: -10px;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oClock=document.querySelector('.clock');
+			var oH=document.querySelector('.hours');
+			var oM=document.querySelector('.minutes');
+			var oS=document.querySelector('.seconds');
+			var N=60;
+			function clock(){
+				var oDate=new Date();
+				var h= oDate.getHours();
+				var m= oDate.getMinutes();
+				var s= oDate.getSeconds();
+				var ms=oDate.getMilliseconds();
+				oH.style.WebkitTransform='rotate('+(h*30+m/60*30)+'deg)';
+				oM.style.WebkitTransform='rotate('+(m*6+s/60*6)+'deg)';
+				oS.style.WebkitTransform='rotate('+s*6+'deg)';
+			}
+			for (var i = 0; i <N; i++) {
+				var oSpan=document.createElement('span');
+				oSpan.style.WebkitTransform='rotate('+i*6+'deg)';
+				if (i%5==0) {
+					oSpan.style.height='26px';
+					oSpan.innerHTML='<em>'+(i/5||12)+'</em>';
+					var oEm = oSpan.children[0];
+					oEm.style.WebkitTransform='rotate('+(-i*6)+'deg)';
+				}
+				oClock.appendChild(oSpan);
+			}
+			clock();
+			setInterval(clock,1000);
+		};
+	</script>
+</head>
+<body>
+	<div class="clock">
+		<div class="hours"></div>
+		<div class="minutes"></div>
+		<div class="seconds"></div>
+		<div class="cap"></div>
+	</div>
+</body>
+</html>
