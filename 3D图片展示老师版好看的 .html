@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{background: #000}
+		*{margin: 0;padding: 0;}
+		ul{position: relative;width:133px;height: 200px;margin: 100px auto;-webkit-transform-style:preserve-3d;-webkit-transform:perspective(800px) rotateY(0deg) rotateX(-10deg); -webkit-transition:1s all ease;}
+		ul li{width: 100%;height: 100%;position: absolute;left: 0;top: 0;box-shadow:0 0 20px #fff;border-radius: 20px;overflow: hidden;-webkit-transform: rotateY(0deg) translateZ(0px);}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var aLi=document.getElementsByTagName('li');
+			for (var i = 0; i < aLi.length; i++) {
+				//不用因为是同时的不好看
+			//aLi[i].style.WebkitTransition='1s all ease';
+				aLi[i].style.WebkitTransition = '1s all ease '+(11-i)*100+'ms';
+				aLi[i].style.WebkitTransform = 'rotateY('+360/11*i+'deg) translateZ(360px)';
+			}
+		};
+	</script>
+</head>
+<body>
+	<ul>
+		<li><img src="img2/1.jpg" /></li>
+		<li><img src="img2/2.jpg" /></li>
+		<li><img src="img2/3.jpg" /></li>
+		<li><img src="img2/4.jpg" /></li>
+		<li><img src="img2/5.jpg" /></li>
+		<li><img src="img2/6.jpg" /></li>
+		<li><img src="img2/7.jpg" /></li>
+		<li><img src="img2/8.jpg" /></li>
+		<li><img src="img2/9.jpg" /></li>
+		<li><img src="img2/10.jpg" /></li>
+		<li><img src="img2/11.jpg" /></li>	
+	</ul>
+</body>
+</html>
