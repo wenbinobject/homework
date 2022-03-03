@@ -1,6 +1,6 @@
 # How to connect the test environment locally
 
-### 1. 项目文件夹相关修改
+### 1. Modify the project folder
 
 ```
 
@@ -25,7 +25,7 @@ NEXT_PUBLIC_BYBIT_COOKIE_DOMAIN = b_t_c_k_fbu-dev-4 //你需要测试的测试�
 
 ```
 
-### 2. 修改系统 hosts 文件
+### 2. Modify the hosts file of the system
 
 在文件中添加
 
@@ -34,10 +34,11 @@ NEXT_PUBLIC_BYBIT_COOKIE_DOMAIN = b_t_c_k_fbu-dev-4 //你需要测试的测试�
 
 ```
 
-### 3. 浏览器url （localhost 替换为 local.fbu-dev-4.bybit.com） //你需要测试的测试服务器地址
+### 3. Browser URL (localhost replaced with local.fbu-dev-4.bybit.com) // Address of the test server you need to test
 
 ```
-demo
+Demo
 http://localhost:8000/future-activity/vip => http://local.fbu-dev-4.bybit.com:8000/future-activity/vip
 
 ```
+
